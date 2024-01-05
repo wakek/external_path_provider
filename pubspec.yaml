@@ -1,5 +1,5 @@
 name: external_path_provider
-description: "A new Flutter plugin project."
+description: "A Flutter plugin that provides paths to external storage on android devices."
 version: 0.0.1
 
 environment:
