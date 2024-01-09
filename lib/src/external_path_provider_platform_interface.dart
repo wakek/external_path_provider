@@ -8,7 +8,7 @@ abstract class ExternalPathProviderPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static ExternalPathProviderPlatform _instance = MethodChannelExternalPathProvider();
+  static ExternalPathProviderPlatform _instance = ExternalPathProvider();
 
   /// The default instance of [ExternalPathProviderPlatform] to use.
   ///
@@ -23,7 +23,7 @@ abstract class ExternalPathProviderPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> getPlatformVersion() {
-    throw UnimplementedError('platformVersion() has not been implemented.');
-  }
+  Future<List<String>> getExternalStorageDirectories();
+
+  Future<String> getExternalStoragePublicDirectory(String type);
 }
