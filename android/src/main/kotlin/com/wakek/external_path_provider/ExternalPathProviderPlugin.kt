@@ -61,7 +61,29 @@ class ExternalPathProviderPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   fun getExternalStoragePublicDirectory(type: String?) : String {
-    return Environment.getExternalStoragePublicDirectory(type).toString()
+    return context.getExternalFilesDir(type).toString()
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
