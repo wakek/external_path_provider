@@ -1,17 +1,12 @@
 package com.wakek.external_path_provider
 
-import androidx.annotation.NonNull
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
-import io.flutter.plugin.common.MethodChannel.Result
-import android.os.Environment
 import android.content.Context
 import java.io.File
-import io.flutter.plugin.common.PluginRegistry.Registrar
-import android.os.Build
 import kotlin.collections.ArrayList
 
 /** ExternalPathProviderPlugin */
@@ -29,7 +24,7 @@ class ExternalPathProviderPlugin: FlutterPlugin, MethodCallHandler {
     channel.setMethodCallHandler(this)
   }
 
-  override fun onMethodCall(call: MethodCall, result: Result) {
+  override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
     when (call.method) {
         "getPlatformVersion" -> {
           result.success("Android ${android.os.Build.VERSION.RELEASE}")

@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
-      dirs = (await ExternalPathProvider.getExternalStorageDirectories())
+      dirs = (await ExternalPathProvider().getExternalStorageDirectories())
           .join(', ');
     } on PlatformException {
       dirs = 'Failed to get platform version.';
